@@ -1,0 +1,2 @@
+class AdminStatus < ApplicationRecord
+end

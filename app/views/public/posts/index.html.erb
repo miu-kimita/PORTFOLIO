@@ -1,0 +1,8 @@
+<h1>ライフハック一覧</h1>
+<% @posts.each do |post| %>
+  <p></p>
+  <span><%= post.title %></span>
+  <span><%= post.image_id %></span>
+  <span><%= post.genre_id %></span>
+  <span><%= post.post_detail %></span>
+<% end %>

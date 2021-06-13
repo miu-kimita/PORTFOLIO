@@ -1,0 +1,2 @@
+class PostUsersController < ApplicationController
+end
