@@ -20,7 +20,7 @@ end
 }
 
   scope module: 'public' do
-    root to: 'homes#top'
+    root 'homes#top'
     get '/about', to: 'homes#about'
     get 'post_user/my_page', to: 'post_users#show'
     get 'post_users/unsubscribe', to: 'post_users#unsubscribe'
