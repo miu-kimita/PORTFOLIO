@@ -2,6 +2,24 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
 
+  def after_sign_in_path_for(resource)
+    case resource
+      when PostUser
+        post_users_my_page_path
+      when Admin
+        admin_root_path
+    end
+  end
+
+  def after_sign_out_path_for(resource)
+    if resource == :post_user
+        new_post_user_session_path
+    elsif resource == :admin
+        new_admin_session_path
+    else
+    end
+  end
+
   protected
 
   def configure_permitted_parameters

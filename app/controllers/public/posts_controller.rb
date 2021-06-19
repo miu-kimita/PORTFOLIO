@@ -1,11 +1,12 @@
 class Public::PostsController < ApplicationController
-  before_action :authenticate_user!,except: [:sign_in]
-  before_action :ensure_user, only: [:edit, :update, :destroy]
+  before_action :authenticate_post_user!,except: [:sign_in]
+  before_action :ensure_post_user, only: [:edit, :update, :destroy]
 
   def show
     @post = Post.find(params[:id])
-    @user = @post.user
+    @user = @post.post_user
     @new_post = Post.new
+    @post_comment = PostComment.new
   end
 
   def index
@@ -15,19 +16,20 @@ class Public::PostsController < ApplicationController
   end
 
   def create
-    @post = post.new(post_params)
-    @post.user_id = current__post_user.id
+    @post = Post.new(post_params)
+    @post.post_user_id = current_post_user.id
     if @post.save
       redirect_to post_path(@post)
       flash[:notice]= "Welcome! You have created LifeHack successfully."
     else
-      @posts = post.all
+      @posts = Post.all
       @user = current_post_user
       render :index
     end
   end
 
   def new
+    @post = Post.new
   end
 
   def edit
@@ -36,10 +38,10 @@ class Public::PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    @post.user_id = current_user.id
+    @post.post_user_id = current_post_user.id
     if @post.update(post_params)
       redirect_to post_path(@post)
-      flash[:notice]= "You have updated LIfeHack successfully"
+      flash[:notice]= "You have updated LifeHack successfully"
     else
       render :edit
     end

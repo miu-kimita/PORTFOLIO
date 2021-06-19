@@ -4,7 +4,7 @@
     <title>LifeHackers</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -13,7 +13,10 @@
     <header>
     <%= render 'layouts/header', { post_user: current_post_user} %>
     </header>
-        <%= yield %>
+    <main>
+      <p><%= flash[:notice] %></p>
+      <%= yield %>
+    </main>
     <footer><%= render 'layouts/footer', { post_user: current_post_user} %></footer>
   </body>
 </html>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_10_013036) do
+ActiveRecord::Schema.define(version: 2021_06_19_095646) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -22,6 +22,15 @@ ActiveRecord::Schema.define(version: 2021_06_10_013036) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+  end
+
+  create_table "bookmarks", force: :cascade do |t|
+    t.integer "post_user_id", null: false
+    t.integer "post_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_bookmarks_on_post_id"
+    t.index ["post_user_id"], name: "index_bookmarks_on_post_user_id"
   end
 
   create_table "favorites", force: :cascade do |t|
@@ -40,9 +49,10 @@ ActiveRecord::Schema.define(version: 2021_06_10_013036) do
 
   create_table "post_comments", force: :cascade do |t|
     t.integer "post_user_id"
-    t.string "post_image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "comment"
+    t.integer "post_id"
   end
 
   create_table "post_users", force: :cascade do |t|
@@ -54,6 +64,9 @@ ActiveRecord::Schema.define(version: 2021_06_10_013036) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "nickname"
+    t.text "introduction"
+    t.string "image_id"
+    t.string "profile_image_id"
     t.index ["email"], name: "index_post_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_post_users_on_reset_password_token", unique: true
   end
