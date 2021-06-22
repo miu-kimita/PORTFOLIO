@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'search/search'
   devise_for :admins, skip: :all
   #devise_scope :admin do
     # get 'admins/sign_in' => 'admins/sessions#new', as: :new_admin_session
@@ -17,7 +18,7 @@ Rails.application.routes.draw do
     root 'homes#top'
     resources :posts,only: [:index,:show]
     resources :genres,only: [:index,:create,:edit,:update]
-    resources :post_users,only: [:index,:show]
+    resources :post_users,only: [:index,:show,:edit,:update]
   end
 
   devise_for :post_users, controllers: {
@@ -34,7 +35,6 @@ Rails.application.routes.draw do
     patch 'post_users/withdrawal', to: 'post_users#withdrawal', as: 'withdrawal'
 
     get '/posts/complete', to: 'posts#complete', as: 'complete'
-    post '/posts/confirm', to: 'posts#confirm', as: 'confirm'
 
     resources :post_users, only: [:index, :show, :edit, :update]
 
@@ -43,6 +43,11 @@ Rails.application.routes.draw do
       resource :favorites, only: [:create, :destroy]
       resource :bookmarks, only: [:create, :destroy]
     end
+
+    resources :contacts, only: [:new, :create]
+    #post 'contacts/confirm', to: 'contacts#confirm', as: 'confirm'
+    post 'contacts/back', to: 'contacts#back', as: 'back'
+    get 'done', to: 'contacts#done', as: 'done'
 
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

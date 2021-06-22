@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_19_095646) do
+ActiveRecord::Schema.define(version: 2021_06_22_064735) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -33,10 +33,19 @@ ActiveRecord::Schema.define(version: 2021_06_19_095646) do
     t.index ["post_user_id"], name: "index_bookmarks_on_post_user_id"
   end
 
+  create_table "contacts", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
+    t.string "email"
+    t.string "phone_number"
+    t.integer "subject"
+    t.text "message"
+  end
+
   create_table "favorites", force: :cascade do |t|
-    t.integer "post_id"
     t.integer "post_user_id"
-    t.string "post_image_id"
+    t.integer "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -67,6 +76,7 @@ ActiveRecord::Schema.define(version: 2021_06_19_095646) do
     t.text "introduction"
     t.string "image_id"
     t.string "profile_image_id"
+    t.boolean "is_deleted", default: false, null: false
     t.index ["email"], name: "index_post_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_post_users_on_reset_password_token", unique: true
   end

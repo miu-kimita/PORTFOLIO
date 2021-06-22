@@ -17,8 +17,7 @@ class Public::PostUsersController < ApplicationController
     end
     #IF分で条件分岐をつけ、カレントユーザーのIDが無い時はどの様なIDをつけるべきかをこちらとビュー側で指定する
 
-    @posts = @post_user.posts
-    @post = @post_user.posts.page(params[:page]).reverse_order
+    @posts = @post_user.posts.page(params[:page]).reverse_order
     @bookmarks = Bookmark.where(post_user_id: current_post_user.id)
     @nickname = current_post_user.nickname
   end

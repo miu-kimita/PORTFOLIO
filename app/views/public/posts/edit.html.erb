@@ -10,9 +10,9 @@
    <div class="col-sm-12 col-md-offset-5 col-md-7 col-lg-5 px-5 px-sm-0 mx-auto">
     <h1>ライフハック編集</h1>
     <%= form_with model:@post,url:"/posts/#{@post.id}", local:true do |f| %>
-    <p>Title</p>
+    <p>LifeHack Title</p>
     <%= f.text_field :title %>
-    <p>Opinion</p>
+    <p>LifeHack 内容</p>
     <%= f.text_field :post_detail %>
 
     <p>

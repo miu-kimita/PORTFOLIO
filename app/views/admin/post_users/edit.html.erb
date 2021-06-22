@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <h2><%= @post_user.nickname %>さんの会員情報編集ページ</h2>
+    <table class='table table-hover table-inverse'>
+      <%= form_with model:@post_user, url:admin_post_user_path(@post_user), method: :patch, local:true do |f| %>
+        <tr>
+          <td>会員ID</td>
+          <td><%= @post_user.id %></td>
+        </tr>
+        <tr>
+          <td>会員ステータス</td>
+          <td><%= f.radio_button :is_deleted, "false" %>有効 <%= f.radio_button :is_deleted, "true" %>退会済み</td>
+          <td><%= f.submit '編集する', class: "btn btn-primary" %></td>
+        </tr>
+      <% end %>
+      </table>
+    </div>
+  </div>

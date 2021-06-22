@@ -1,9 +1,11 @@
 class Post < ApplicationRecord
 	belongs_to :post_user
+	belongs_to :genre
 	has_many :post_comments, dependent: :destroy
 	has_many :favorites, dependent: :destroy
     has_many :bookmarks, dependent: :destroy
     validates :title, presence: true
+    validates :genre_id, presence: true
     validates :post_detail, presence: true
     validates :post_detail, length: { minimum: 1 }
     attachment :image

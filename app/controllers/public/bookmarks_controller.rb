@@ -1,4 +1,4 @@
-class BookmarksController < ApplicationController
+class Public::BookmarksController < ApplicationController
   before_action :authenticate_post_user!
 
   def create

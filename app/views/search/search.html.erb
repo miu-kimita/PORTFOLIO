@@ -1,0 +1,18 @@
+<div class="container px-5 px-sm-0">
+  <div class="row">
+    <div class="col-md-8 offset-md-1">
+      <% if @datas.empty? %>
+        <h2>該当する商品はありません</h2>
+      <% end %>
+      <% @datas.each do |data| %>
+        <div>
+          <%= link_to post_path(data.id) do %>     　　　　#写真を商品詳細へのリンクにしていますが、必要なければ省略してください。
+            <%= attachment_image_tag data, :image, size: "190x150", class: "img_hover" %><br>
+          <% end %>
+          <p><%=  data.name %></p><br>
+          <p>￥<%= data.price_without_tax %></p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,5 +1,4 @@
 class Public::PostsController < ApplicationController
-  before_action :authenticate_post_user!,except: [:sign_in]
   before_action :ensure_post_user, only: [:edit, :update, :destroy]
 
   def show
@@ -13,6 +12,9 @@ class Public::PostsController < ApplicationController
     @posts = Post.all
     @post = Post.new
     @user = current_post_user
+    @genres = Genre.all
+    @genre = Genre.new
+    @all_ranks = Post.find(Favorite.group(:post_id).order('count(post_id) desc').limit(3).pluck(:post_id))
   end
 
   def create
@@ -55,14 +57,14 @@ class Public::PostsController < ApplicationController
 
   private
 
-  def ensure_user
-    @posts = current_user.posts
+  def ensure_post_user
+    @posts = current_post_user.posts
     @post = @posts.find_by(id: params[:id])
     redirect_to posts_path unless @post
   end
 
   def post_params
-    params.require(:post).permit(:title, :post_detail)
+    params.require(:post).permit(:title, :post_detail,:genre_id,:image,:image_id)
   end
 
 end

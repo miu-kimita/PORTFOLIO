@@ -1,0 +1,1 @@
+  $(".post_<%= @post.id %>").html("<%= escape_javascript(render partial: 'public/post_comments/comment-index', locals: {post: @post}) %>");

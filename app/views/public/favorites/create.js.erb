@@ -1,1 +1,1 @@
-  $("#post_<%= @post.id %>").html("<%= escape_javascript(render partial: 'favorites/favorite-btn', locals: {post: @post}) %>");
+  $("#post_<%= @post.id %>").html("<%= escape_javascript(render partial: 'public/favorites/favorite-btn', locals: {post: @post}) %>");

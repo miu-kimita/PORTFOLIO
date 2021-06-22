@@ -1,5 +1,5 @@
 class Admin::PostsController < ApplicationController
-  before_action :authenticate_post_user!,except: [:sign_in]
+  before_action :authenticate_admin!
   before_action :ensure_post_user, only: [:edit, :update, :destroy]
 
   def show
