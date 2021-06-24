@@ -1,4 +1,4 @@
-class Public::PustUser::SearchController < ApplicationController
+class Public::SearchController < ApplicationController
 
   def search
     @value = params["search"]["value"]         #データを代入
@@ -14,7 +14,7 @@ class Public::PustUser::SearchController < ApplicationController
   end
 
   def forward(value)                              #forward以降は商品名検索の定義しかしてません。
-    Post.where("name LIKE ?", "#{value}%")        
+    Post.where("name LIKE ?", "#{value}%")
   end
 
   def backward(value)

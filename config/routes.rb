@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'search/search'
+  #get 'search/search'
   devise_for :admins, skip: :all
   #devise_scope :admin do
     # get 'admins/sign_in' => 'admins/sessions#new', as: :new_admin_session
@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   end
 
   devise_for :post_users, controllers: {
+    omniauth_callbacks: 'post_users/omniauth_callbacks',
     sessions:      'post_users/sessions',
     passwords:     'post_users/passwords',
     registrations: 'post_users/registrations'
@@ -29,6 +30,7 @@ Rails.application.routes.draw do
 
   scope module: 'public' do
     root 'homes#top'
+    get '/search' => 'search#search'
     get '/about', to: 'homes#about'
     get 'post_users/my_page', to: 'post_users#show'
     get 'post_users/unsubscribe', to: 'post_users#unsubscribe'
@@ -45,7 +47,7 @@ Rails.application.routes.draw do
     end
 
     resources :contacts, only: [:new, :create]
-    #post 'contacts/confirm', to: 'contacts#confirm', as: 'confirm'
+    post 'contacts/confirm', to: 'contacts#confirm', as: 'confirm'
     post 'contacts/back', to: 'contacts#back', as: 'back'
     get 'done', to: 'contacts#done', as: 'done'
 

@@ -28,4 +28,9 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit :account_update, keys: added_attrs
     devise_parameter_sanitizer.permit :sign_in, keys: added_attrs
   end
+
+  private
+  def configure_permitted_parameters  # メールアドレス以外の自分で追加したカラムを許可
+   devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname, :email, :password])
+  end
 end

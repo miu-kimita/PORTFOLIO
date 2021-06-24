@@ -1,7 +1,7 @@
-          <% @post.post_comments.each do |post_comment| %>
+          <% post.post_comments.each do |post_comment| %>
           <tr>
             <td><%= link_to post_user_path(post_comment.post_user) do %>
-              <%= attachment_image_tag(post_comment.post_user, :profile_image, :fill, 100, 100, fallback: "no-image.jpg") %><br>
+              <%= attachment_image_tag(post_comment.post_user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg") %><br>
               <%= post_comment.post_user.nickname %>
               <% end %>
             </td>

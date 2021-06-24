@@ -69,6 +69,9 @@ gem 'bootstrap', '~> 4.5'
 gem 'jquery-rails'
 gem 'font-awesome-sass', '~> 5.13'
 
+gem 'omniauth-google-oauth2'             # Google認証
+gem 'omniauth-github'                    # GitHub認証
+
 gem 'dotenv-rails'
 group :production do
   gem 'mysql2'

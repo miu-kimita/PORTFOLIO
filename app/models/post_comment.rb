@@ -1,5 +1,5 @@
 class PostComment < ApplicationRecord
-    belongs_to :post_users
-    belongs_to :posts
+    belongs_to :post_user
+    belongs_to :post
     validates :comment, presence: true
 end

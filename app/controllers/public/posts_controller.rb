@@ -5,6 +5,7 @@ class Public::PostsController < ApplicationController
     @post = Post.find(params[:id])
     @user = @post.post_user
     @new_post = Post.new
+    @genres = Genre.all
     @post_comment = PostComment.new
   end
 

@@ -9,16 +9,16 @@
       <div class="collapse navbar-collapse" id="navbarsExample02">
         <ul class="navbar-nav ml-auto">
           <li class="nav-post active">
-            <%= link_to ' 投稿一覧', admin_posts_path,class: 'nav-link text-light' %>
+            <%= link_to '  投稿一覧', admin_posts_path,class: 'nav-link text-light' %>
           </li>
           <li class="nav-post">
-            <%= link_to '会員一覧',admin_post_users_path,class: 'nav-link text-light' %>
+            <%= link_to '  会員一覧',admin_post_users_path,class: 'nav-link text-light' %>
           </li>
                 <li class="nav-post">
-            <%= link_to 'ジャンル一覧', admin_genres_path, class: 'nav-link text-light' %>
+            <%= link_to '  ジャンル一覧', admin_genres_path, class: 'nav-link text-light' %>
           </li>
           <li class="nav-post">
-            <%= link_to 'ログアウト', destroy_admin_session_path, method: :delete, class: 'nav-link text-light' %>
+            <%= link_to '  ログアウト', destroy_admin_session_path, method: :delete, class: 'nav-link text-light' %>
           </li>
         </ul>
       </div>
@@ -32,13 +32,13 @@
                 <%= "ようこそ、 " + post_user.nickname + "さん!" %>
                 <ul class="navbar-nav ml-auto text-white" >
                   <li class="nav-post">
-                    <%= link_to ' My Page', post_users_my_page_path, class: 'text-white' %>
+                    <%= link_to '  My Page', post_users_my_page_path, class: 'text-white' %>
                   </li>
                   <li class="nav-post">
-                    <%= link_to ' LifeHack', posts_path, class: 'text-white' %>
+                    <%= link_to '  LifeHack', posts_path, class: 'text-white' %>
                   </li>
                   <li class="nav-post">
-                    <%= link_to " Log Out", destroy_post_user_session_path, method: :delete, class: 'text-white' %>
+                    <%= link_to "  Log Out", destroy_post_user_session_path, method: :delete, class: 'text-white' %>
                   </li>
                 </ul>
               </div>

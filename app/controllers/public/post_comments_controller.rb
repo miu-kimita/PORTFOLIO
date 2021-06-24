@@ -2,6 +2,7 @@ class Public::PostCommentsController < ApplicationController
   before_action :post_params
 
   def create
+    @post = Post.find(params[:post_id])
     comment = current_post_user.post_comments.new(post_comment_params)
     comment.post_id = @post.id
     comment.save
@@ -14,7 +15,7 @@ class Public::PostCommentsController < ApplicationController
   private
 
   def post_comment_params
-    params.require(:post_comment).permit(:comment)
+    params.require(:post_comment).permit(:comment,:post_id,:post_user_id)
   end
 
   def post_params

@@ -1,37 +1,34 @@
 <div class="container px-5 px-sm-0">
   <div class="row">
-    <div class="col-md-8 offset-md-1">
+    <div class='col-md-2'>
+      <%= render 'search', genre: @genres %>
+    </div>
+    <div class="col-md-9 offset-md-1">
       <h2>Post detail</h2>
       <table class="table table-hover table-inverse">
         <tbody>
           <tr></tr>
-            <td><%= link_to post_user_path(@user.id) do %>
+            <p><%= link_to post_user_path(@user.id) do %>
               <%= image_tag('no_image.jpg') %>
-              <p><%= @post.post_user.nickname %></p>
+              <%= @post.post_user.nickname %>
               <% end %>
-            </td>
-            <td><%= link_to post_path(@post.id) do %>
-              <%= @post.title %>
-              <% end %>
-            </td>
-            <td><%= @post.post_detail %></td>
-            <td>
+            </p>
+            <p><%= @post.title %></p>
+            <p><%= @post.post_detail %></p>
+            <p>
               <% if @post.bookmarked_by?(current_post_user) %>
-                <td><%= link_to "ブックマークを外す", post_bookmarks_path(@post), method: :delete %></td>
+                <p><%= link_to "ブックマークを外す", post_bookmarks_path(@post), method: :delete %></p>
               <% else %>
-                <td><%= link_to "ブックマーク", post_bookmarks_path(@post), method: :post %></td>
+                <p><%= link_to "ブックマーク", post_bookmarks_path(@post), method: :post %></p>
               <% end %>
-            </td>
-            <td><% if @user.id == current_post_user.id %>
+            </p>
+            <p><% if @user.id == current_post_user.id %>
               <%= link_to "Edit", edit_post_path(@post.id), class:"btn btn-success" %>
-              <% end %>
-            </td>
-            <td><% if @user.id == current_post_user.id %>
               <%= link_to "Destroy", post_path(@post.id), method: :delete, "data-confirm" => "本当に消しますか？",class:"btn btn-success destroy(@post.id)" %>
-                <% end %>
-              </td>
-            <td id="post_<%= (@post.id) %>"><%= render partial: 'public/favorites/favorite-btn', locals: { post:@post } %></td>
-            <td>コメント数：<%= @post.post_comments.count %></td>
+              <% end %>
+              </p>
+            <p id="post_<%= (@post.id) %>"><%= render partial: 'public/favorites/favorite-btn', locals: { post:@post } %></p>
+            <p>コメント数：<%= @post.post_comments.count %></p>
             </tr>
         </tbody>
       </table>
