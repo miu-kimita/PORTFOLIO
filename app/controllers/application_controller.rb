@@ -1,6 +1,20 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :set_locale
+
+    def set_locale　　　　　##この部分は多言語化に使用
+        I18n.locale = locale
+    end
+
+    def locale
+        @locale ||= params[:locale] ||= I18n.default_locale
+    end
+
+    def default_url_options(options={})
+        options.merge(locale: locale)
+    end
+
 
   def after_sign_in_path_for(resource)
     case resource
@@ -31,6 +45,6 @@ class ApplicationController < ActionController::Base
 
   private
   def configure_permitted_parameters  # メールアドレス以外の自分で追加したカラムを許可
-   devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname, :email, :password])
+   devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname])
   end
 end

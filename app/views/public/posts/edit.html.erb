@@ -8,20 +8,20 @@
 <div class="container">
   <div class="row">
    <div class="col-sm-12 col-md-offset-5 col-md-7 col-lg-5 px-5 px-sm-0 mx-auto">
-    <h1>ライフハック編集</h1>
+    <h1>LifeHack edit</h1>
     <%= form_with model:@post,url:"/posts/#{@post.id}", local:true do |f| %>
-    <p>LifeHack Title</p>
+    <p>LifeHack title</p>
     <%= f.text_field :title %>
     <p>LifeHack 内容</p>
     <%= f.text_field :post_detail %>
 
     <p>
-    <%= f.submit "Edit", class: "btn btn-success"  %>
+    <%= f.submit "edit", class: "btn btn-success"  %>
     </p>
     <% end %>
 
-    <%= link_to "Show", post_path(@post.id) %>
-    <%= link_to "Back", posts_path %>
+    <%= link_to "show", post_path(@post.id) %>
+    <%= link_to "back", posts_path %>
    </div>
   </div>
  </div>

@@ -1,0 +1,15 @@
+en:
+  posts:                 ## 対象のViewのフォルダ名
+    show:                     ##対象のViewのページ名
+      id: "ID"
+      bookmark: "Bookmark"
+      unbookmark: "UnBookmark"
+      created_at: "Created"
+      updated_at: "Updated"
+    new:
+      title: "Title"
+      image: "Image"
+      genre: "Genre"
+    edit:
+      detail: "Detail"
+      edit: "Edit"

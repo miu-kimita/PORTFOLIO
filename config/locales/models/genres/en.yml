@@ -1,0 +1,10 @@
+en:                  ## モデル
+  activerecord:                 ## モデルの開始はactiverecord
+    models:                     ## モデル
+      genre: "Genre"
+    attributes:                 ## 属性（カラム)
+      genre:
+        id: "ID"
+        name: "GenreName"
+        created_at: "Created"
+        updated_at: "Updated"

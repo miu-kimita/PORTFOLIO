@@ -17,13 +17,13 @@
             <p><%= @post.post_detail %></p>
             <p>
               <% if @post.bookmarked_by?(current_post_user) %>
-                <p><%= link_to "ブックマークを外す", post_bookmarks_path(@post), method: :delete %></p>
+                <p><%= link_to "unbookmark", post_bookmarks_path(@post), method: :delete %></p>
               <% else %>
-                <p><%= link_to "ブックマーク", post_bookmarks_path(@post), method: :post %></p>
+                <p><%= link_to "bookmark", post_bookmarks_path(@post), method: :post %></p>
               <% end %>
             </p>
             <p><% if @user.id == current_post_user.id %>
-              <%= link_to "Edit", edit_post_path(@post.id), class:"btn btn-success" %>
+              <%= link_to "edit", edit_post_path(@post.id), class:"btn btn-success" %>
               <%= link_to "Destroy", post_path(@post.id), method: :delete, "data-confirm" => "本当に消しますか？",class:"btn btn-success destroy(@post.id)" %>
               <% end %>
               </p>

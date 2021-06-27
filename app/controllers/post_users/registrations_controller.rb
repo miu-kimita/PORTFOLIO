@@ -65,8 +65,8 @@ class PostUsers::RegistrationsController < Devise::RegistrationsController
   def create
     if params[:sns_auth] == 'true'
       pass = Devise.friendly_token    # PWの自動生成
-      params[:user][:password] = pass
-      params[:user][:password_confirmation] = pass
+      params[:post_user][:password] = pass
+      params[:post_user][:password_confirmation] = pass
     end
     super
   end

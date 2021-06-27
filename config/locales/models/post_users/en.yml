@@ -1,0 +1,12 @@
+en:
+  activerecord:                 ## モデルの開始はactiverecord
+    models:                     ## モデル
+      post_user: "PostUser"
+    attributes:                 ## 属性（カラム)
+      post_user:
+        id: "ID"
+        email: "Email"
+        nickname: "NickName"
+        introduction: "Introduction"
+        created_at: "Created"
+        updated_at: "Updated"

@@ -18,6 +18,30 @@
 @import 'font-awesome';
 
 body {
-  background-color: #33CCFF;
+  background-color: #CCFFFF;
 }
 
+.nav-post {
+  margin-right: 15px;
+}
+
+header {
+  top: 0px;
+}
+
+footer {
+  width: 100%;
+  background-color: #89c7de;
+  color: #fff;
+  text-align: center;
+  padding: 30px 0;
+}
+
+.footer-link {
+  text-decoration: underline;
+  zoom: 1.5;
+}
+
+.icon {
+   text-align: center;
+}

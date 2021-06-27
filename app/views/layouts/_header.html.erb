@@ -3,22 +3,21 @@
     <div class="container">
       <a class="navbar-brand" href="/"><span>The/LifeHackers</span></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
       </button>
       <% if admin_signed_in? %>
       <div class="collapse navbar-collapse" id="navbarsExample02">
         <ul class="navbar-nav ml-auto">
           <li class="nav-post active">
-            <%= link_to '  投稿一覧', admin_posts_path,class: 'nav-link text-light' %>
+            <%= link_to '  lifehack', admin_posts_path,class: 'nav-link text-light' %>
           </li>
           <li class="nav-post">
-            <%= link_to '  会員一覧',admin_post_users_path,class: 'nav-link text-light' %>
+            <%= link_to '  users',admin_post_users_path,class: 'nav-link text-light' %>
           </li>
                 <li class="nav-post">
-            <%= link_to '  ジャンル一覧', admin_genres_path, class: 'nav-link text-light' %>
+            <%= link_to '  genres', admin_genres_path, class: 'nav-link text-light' %>
           </li>
           <li class="nav-post">
-            <%= link_to '  ログアウト', destroy_admin_session_path, method: :delete, class: 'nav-link text-light' %>
+            <%= link_to '  logout', destroy_admin_session_path, method: :delete, class: 'nav-link text-light' %>
           </li>
         </ul>
       </div>
@@ -32,23 +31,23 @@
                 <%= "ようこそ、 " + post_user.nickname + "さん!" %>
                 <ul class="navbar-nav ml-auto text-white" >
                   <li class="nav-post">
-                    <%= link_to '  My Page', post_users_my_page_path, class: 'text-white' %>
+                    <%= link_to '  mypage', post_users_my_page_path, class: 'text-white' %>
                   </li>
                   <li class="nav-post">
-                    <%= link_to '  LifeHack', posts_path, class: 'text-white' %>
+                    <%= link_to '  lifehack', posts_path, class: 'text-white' %>
                   </li>
                   <li class="nav-post">
-                    <%= link_to "  Log Out", destroy_post_user_session_path, method: :delete, class: 'text-white' %>
+                    <%= link_to "  logout", destroy_post_user_session_path, method: :delete, class: 'text-white' %>
                   </li>
                 </ul>
               </div>
             <% else %>
               <div class="collapse navbar-collapse" id="navbarsExample02">
                 <ul class="navbar-nav ml-auto">
-                  <li class="nav-post"><%= link_to ' About', about_path, class: 'text-white' %></li>
-                  <li class="nav-post"><%= link_to ' LifeHack', posts_path , class: 'text-white' %></li>
-                  <li class="nav-post"><%= link_to ' Sign Up', new_post_user_registration_path, class: 'text-white' %></li>
-                  <li class="nav-post"><%= link_to ' Log In', new_post_user_session_path, class: 'text-white' %></li>
+                  <li class="nav-post"><%= link_to ' about', about_path, class: 'text-white' %></li>
+                  <li class="nav-post"><%= link_to ' lifeHack', posts_path , class: 'text-white' %></li>
+                  <li class="nav-post"><%= link_to ' signup', new_post_user_registration_path, class: 'text-white' %></li>
+                  <li class="nav-post"><%= link_to ' login', new_post_user_session_path, class: 'text-white' %></li>
                 </ul>
               </div>
             <% end %>

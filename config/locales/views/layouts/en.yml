@@ -1,0 +1,15 @@
+en:
+  layout:                 ## 対象のViewのフォルダ名
+    _header:                     ##対象のViewのページ名
+      lifehack: "LifeHack"
+      users: "Users"
+      genres: "Genres"
+      logout: "LogOut"
+      mypage: "MyPage"
+      users: "Users"
+      signup: "SignUp"
+
+    _footer:
+      title: "Title"
+      image: "Image"
+      genre: "Genre"
