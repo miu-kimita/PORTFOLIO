@@ -74,6 +74,7 @@ gem 'omniauth-github'                    # GitHub認証
 gem "omniauth-rails_csrf_protection"
 
 gem 'rails-i18n'            #多言語化に使用
+gem 'paranoia'        #論理削除に使用
 
 gem 'dotenv-rails'
 group :production do

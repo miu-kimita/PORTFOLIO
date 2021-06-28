@@ -28,7 +28,7 @@
               <% end %>
           </td>
           <td><%= attachment_image_tag post, :image,:fill, 100, 100, format: 'jpeg' %></td>
-          <td><%= post.genre.name %></td>
+          <td><%= post.genre.genre_name %></td>
         </tr>
         <% end %>
         <%= paginate @posts %>

@@ -9,10 +9,11 @@
         </tr>
         <tr>
           <td>会員ステータス</td>
-          <td><%= f.radio_button :is_deleted, "false" %>有効 <%= f.radio_button :is_deleted, "true" %>退会済み</td>
-          <td><%= f.submit '編集する', class: "btn btn-primary" %></td>
+          <td><%= f.radio_button :is_deleted, "false" %>有効
+            <%= f.radio_button :is_deleted, "true" %>退会済み</td>
         </tr>
-      <% end %>
       </table>
+      <%= f.submit '編集する', class: "btn btn-primary" %>
+      <% end %>
     </div>
   </div>

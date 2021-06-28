@@ -39,6 +39,9 @@ class Public::PostUsersController < ApplicationController
   end
 
   def destroy
+    @post_user = PostUser.find(params[:id]) #ユーザ毎の情報を得る
+    @post_user.destroy #ユーザ情報を削除（退会）
+    redirect_to root_path #削除後、topに移動させる
   end
 
   private
