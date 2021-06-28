@@ -5,11 +5,11 @@
       <div class="form-body p-4">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="field">
-          <%= f.label :email %><br />
+          <%= f.label t('sessions.new.email') %><br />
           <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
         </div>
         <div class="field">
-          <%= f.label :password %><br />
+          <%= f.label t('sessions.new.password') %><br />
           <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
         </div>
         <% if devise_mapping.rememberable? %>
@@ -19,7 +19,7 @@
           </div>
         <% end %>
         <div class="actions">
-          <%= f.submit "Log in", class: "form-control" %>
+          <%= f.submit t('sessions.new.login'), class: "form-control" %>
         </div>
       <% end %>
       <%= render "post_users/shared/links" %>

@@ -4,6 +4,7 @@ ja:
       id: "ID"
       bookmark: "ブックマーク"
       unbookmark: "ブックマークを外す"
+      post: "投稿"
       created_at: "投稿日時"
       updated_at: "更新日時"
     new:
@@ -13,3 +14,6 @@ ja:
     edit:
       detail: "詳細"
       edit: "編集"
+    _search:
+      genre_search: "ジャンル検索"
+      title_search: "タイトル検索"

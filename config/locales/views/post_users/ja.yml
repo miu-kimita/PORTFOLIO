@@ -1,0 +1,17 @@
+ja:
+  post_users:                 ## 対象のViewのフォルダ名
+    edit:                     ##対象のViewのページ名
+      lifehack_edit: "ライフハック編集"
+      title: "タイトル"
+      image: "画像"
+      post: "投稿"
+      created_at: "投稿日時"
+      updated_at: "更新日時"
+    show:
+      post_users: "投稿者名"
+      title: "タイトル"
+      detail: "詳細"
+      edit: "編集"
+    _search:
+      genre_search: "ジャンル検索"
+      title_search: "タイトル検索"

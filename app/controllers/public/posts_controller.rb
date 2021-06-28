@@ -10,7 +10,7 @@ class Public::PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
+    @posts = Post.page(params[:page]).reverse_order
     @post = Post.new
     @user = current_post_user
     @genres = Genre.all

@@ -3,7 +3,7 @@ class PostUser < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_many :post_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
-  attachment :profile_image, destroy: false
+  attachment :image, destroy: false
   validates :nickname, length: { minimum: 2, maximum: 20 }
   validates :nickname, presence: true
   validates :introduction, length: { maximum: 50 }

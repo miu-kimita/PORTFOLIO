@@ -17,14 +17,14 @@
             <p><%= @post.post_detail %></p>
             <p>
               <% if @post.bookmarked_by?(current_post_user) %>
-                <p><%= link_to "unbookmark", post_bookmarks_path(@post), method: :delete %></p>
+                <p><%= link_to t('posts.show.unbookmark'), post_bookmarks_path(@post), method: :delete %></p>
               <% else %>
-                <p><%= link_to "bookmark", post_bookmarks_path(@post), method: :post %></p>
+                <p><%= link_to t('posts.show.bookmark'), post_bookmarks_path(@post), method: :post %></p>
               <% end %>
             </p>
             <p><% if @user.id == current_post_user.id %>
-              <%= link_to "edit", edit_post_path(@post.id), class:"btn btn-success" %>
-              <%= link_to "Destroy", post_path(@post.id), method: :delete, "data-confirm" => "本当に消しますか？",class:"btn btn-success destroy(@post.id)" %>
+              <%= link_to "#{t('dictionary.button.edit')}", edit_post_path(@post.id), class:"btn btn-success" %>
+              <%= link_to t('dictionary.button.destroy'), post_path(@post.id), method: :delete, "data-confirm" => t('dictionary.message.destroy.confirm'),class:"btn btn-success destroy(@post.id)" %>
               <% end %>
               </p>
             <p id="post_<%= (@post.id) %>"><%= render partial: 'public/favorites/favorite-btn', locals: { post:@post } %></p>
@@ -38,7 +38,7 @@
       <div class="new-comment">
         <%= form_with(model:[@post, @post_comment]) do |f| %>
           <%= f.text_area :comment, rows:'5' %>
-          <%= f.submit "Post" %>
+          <%= f.submit t('posts.show.post') %>
         <% end %>
       </div>
     </div>

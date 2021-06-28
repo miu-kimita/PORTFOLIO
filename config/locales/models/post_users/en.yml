@@ -6,6 +6,7 @@ en:
       post_user:
         id: "ID"
         email: "Email"
+        image_id: "Image"
         nickname: "NickName"
         introduction: "Introduction"
         created_at: "Created"

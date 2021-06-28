@@ -21,6 +21,7 @@ en:                              ## 言語名
       edit: "Edit"
       show: "Show"
       back: "Back"
+      post: "Post"
   time:                          ## 表示する時間の形式
     formats:
       default: ! "%Y-%m-%d %H:%M:%S"

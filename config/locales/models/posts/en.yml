@@ -6,6 +6,7 @@ en:
       post:
         id: "ID"
         title: "Title"
+        image: "Image"
         genre_id: "Genre"
         post_detail: "PostDetail"
         created_at: "Created"

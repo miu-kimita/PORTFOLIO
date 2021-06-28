@@ -1,0 +1,7 @@
+ja:
+  sessions:                 ## 対象のViewのフォルダ名
+    new:                     ##対象のViewのページ名
+      password: "パスワード"
+      email: "メールアドレス"
+      rememberme: "ログイン情報を保存します"
+      login: "ログイン"

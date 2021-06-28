@@ -1,17 +1,17 @@
 <div class="name-search">
-    <h5>タイトル検索</h5>
+    <h5><%= t('dictionary.button.search') %></h5>
     <%= form_with url: search_path, method: :get, local: true do |f| %>
       <%= f.text_field 'search[value]', size: "24x4" %><br>
       <span class="search-button col-xs-12 text-right">
         <%= f.select 'search[how]', options_for_select({ "部分一致" => "partical", "前方一致" => "forward", "後方一致" => "backward", "完全一致" => "match" }) %>
-        <%= f.submit :"search" %>
+        <%= f.submit t('dictionary.button.search') %>
       </span>
     <% end %>
 </div>
 <table class="table table-bordered genre-table">
     <thead>
       <tr>
-        <th>ジャンル検索</th>
+        <th><%= t('dictionary.button.search') %></th>
       </tr>
     </thead>
     <tbody>

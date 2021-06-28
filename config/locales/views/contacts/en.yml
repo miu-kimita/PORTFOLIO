@@ -1,0 +1,7 @@
+en:
+  contact:                 ## 対象のViewのフォルダ名
+    new:                     ##対象のViewのページ名
+      name: "Name"
+      message: "Message"
+      contact: "Contact Us Form"
+      contact_check: "Contact Check"

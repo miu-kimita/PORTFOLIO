@@ -6,6 +6,7 @@ ja:
       post_user:
         id: "ID"
         email: "メールアドレス"
+        image_id: "イメージ"
         nickname: "ニックネーム"
         introduction: "自己紹介"
         created_at: "投稿日時"

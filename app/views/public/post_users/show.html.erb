@@ -2,8 +2,9 @@
   <div class="row">
   <%#= render 'post_users/list', post_user: @post_user,post: @new_post %>
     <div class="col-md-8 offset-md-1">
-      <p><%= attachment_image_tag(@post_user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg") %><br>
+      <p><%= attachment_image_tag(@post_user, :image, :fill, 100, 100, fallback: "no_image.jpg") %><br>
         <%= @post_user.nickname %></p>
+      <p><%= link_to "#{t('dictionary.button.edit')}", edit_post_user_path(@post_user), class: "btn btn-sm btn-success edit_post_user_#{@post_user.id}" %></p>
       <h2>Post LifeHacks</h2>
       <table class="table table-hover table-inverse">
         <tbody>
@@ -11,24 +12,25 @@
   		    <tr>
             <td><%= link_to post.title, post_path(post) %></td>
             <td><% if @post_user.id == current_post_user.id %>
-              <td><%= link_to 'Edit', edit_post_path(post), class: "btn btn-sm btn-success edit_post_#{post.id}" %></td>
+              <td><%= link_to "#{t('dictionary.button.edit')}", edit_post_path(post), class: "btn btn-sm btn-success edit_post_#{post.id}" %></td>
               <% end %>
             </td>
             <td><% if @post_user.id == current_post_user.id %>
-              <%= link_to 'Destroy', post_path(post), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy(post.id)" %>
+              <%= link_to "#{t('dictionary.button.destroy')}", post_path(post), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy(post.id)" %>
               <% end %>
             </td>
             <td>コメント数：<%= post.post_comments.count %></td>
           </tr>
           <% end %>
+          <%= paginate @posts %>
         </tbody>
       </table>
       <h2>User Bookmark</h2>
-      <table>
+      <table class="table table-hover table-inverse">
         <thead>
           <tr>
-            <th>投稿者名</th>
-            <th>タイトル</th>
+            <th><%= PostUser.human_attribute_name(:nickname) %></th>
+            <th><%= "#{t('post_users.show.title')}" %></th>
           </tr>
         </thead>
         <tbody>

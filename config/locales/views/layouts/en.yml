@@ -5,9 +5,11 @@ en:
       users: "Users"
       genres: "Genres"
       logout: "LogOut"
+      login: "LogIn"
       mypage: "MyPage"
       users: "Users"
       signup: "SignUp"
+      new_post: "NewPost"
 
     _footer:
       title: "Title"

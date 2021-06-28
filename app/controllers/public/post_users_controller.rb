@@ -3,7 +3,7 @@ class Public::PostUsersController < ApplicationController
   before_action :ensure_post_user, only: [:edit, :update, :destroy]
 
   def index
-    @post_users = PostUser.all
+    @post_users = PostUser.page(params[:page]).reverse_order
     @post_user = current_post_user
     @post = Post.new
     @posts = Post.all

@@ -6,6 +6,7 @@ ja:
       post:
         id: "ID"
         title: "タイトル"
+        image: "画像"
         genre_id: "ジャンル"
         post_detail: "投稿内容"
         created_at: "登録日時"

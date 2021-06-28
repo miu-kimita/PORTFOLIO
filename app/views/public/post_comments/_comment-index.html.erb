@@ -9,7 +9,7 @@
             <% if post_comment.post_user == current_post_user %>
               <div class="comment-delete">
                 <td>
-                  <%= link_to "Destroy", post_post_comment_path(post_comment.post, post_comment), method: :delete, class: "btn btn-sm btn-danger destroy(@post.id)" ,remote: true %>
+                  <%= link_to "#{t('dictionary.button.destroy')}", post_post_comment_path(post_comment.post, post_comment), method: :delete, class: "btn btn-sm btn-danger destroy(@post.id)" ,remote: true %>
                 </td>
               </div>
             <% end %>

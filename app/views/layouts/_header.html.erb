@@ -8,16 +8,16 @@
       <div class="collapse navbar-collapse" id="navbarsExample02">
         <ul class="navbar-nav ml-auto">
           <li class="nav-post active">
-            <%= link_to '  lifehack', admin_posts_path,class: 'nav-link text-light' %>
+            <%= link_to "#{t('layout._header.lifehack')}", admin_posts_path,class: 'nav-link text-light' %>
           </li>
           <li class="nav-post">
-            <%= link_to '  users',admin_post_users_path,class: 'nav-link text-light' %>
+            <%= link_to "#{t('layout._header.users')}",admin_post_users_path,class: 'nav-link text-light' %>
           </li>
                 <li class="nav-post">
-            <%= link_to '  genres', admin_genres_path, class: 'nav-link text-light' %>
+            <%= link_to t('layout._header.genres'), admin_genres_path, class: 'nav-link text-light' %>
           </li>
           <li class="nav-post">
-            <%= link_to '  logout', destroy_admin_session_path, method: :delete, class: 'nav-link text-light' %>
+            <%= link_to "#{t('layout._header.logout')}", destroy_admin_session_path, method: :delete, class: 'nav-link text-light' %>
           </li>
         </ul>
       </div>
@@ -31,13 +31,16 @@
                 <%= "ようこそ、 " + post_user.nickname + "さん!" %>
                 <ul class="navbar-nav ml-auto text-white" >
                   <li class="nav-post">
-                    <%= link_to '  mypage', post_users_my_page_path, class: 'text-white' %>
+                    <%= link_to "#{t('layout._header.mypage')}", post_users_my_page_path, class: 'text-white' %>
                   </li>
                   <li class="nav-post">
-                    <%= link_to '  lifehack', posts_path, class: 'text-white' %>
+                    <%= link_to "#{t('layout._header.lifehack')}", posts_path, class: 'text-white' %>
                   </li>
                   <li class="nav-post">
-                    <%= link_to "  logout", destroy_post_user_session_path, method: :delete, class: 'text-white' %>
+                    <%= link_to "#{t('layout._header.logout')}", destroy_post_user_session_path, method: :delete, class: 'text-white' %>
+                  </li>
+                  <li class="nav-post">
+                    <%= link_to "#{t('layout._header.new_post')}", new_post_path, class: 'text-white' %>
                   </li>
                 </ul>
               </div>
@@ -45,9 +48,9 @@
               <div class="collapse navbar-collapse" id="navbarsExample02">
                 <ul class="navbar-nav ml-auto">
                   <li class="nav-post"><%= link_to ' about', about_path, class: 'text-white' %></li>
-                  <li class="nav-post"><%= link_to ' lifeHack', posts_path , class: 'text-white' %></li>
-                  <li class="nav-post"><%= link_to ' signup', new_post_user_registration_path, class: 'text-white' %></li>
-                  <li class="nav-post"><%= link_to ' login', new_post_user_session_path, class: 'text-white' %></li>
+                  <li class="nav-post"><%= link_to "#{t('layout._header.lifehack')}", posts_path , class: 'text-white' %></li>
+                  <li class="nav-post"><%= link_to "#{t('layout._header.signup')}", new_post_user_registration_path, class: 'text-white' %></li>
+                  <li class="nav-post"><%= link_to "#{t('layout._header.login')}", new_post_user_session_path, class: 'text-white' %></li>
                 </ul>
               </div>
             <% end %>

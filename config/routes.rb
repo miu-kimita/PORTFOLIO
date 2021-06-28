@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  #get 'search/search'
+  scope '(:locale)', locale: /#{I18n.available_locales.map(&:to_s).join('|')}/ do
+    # For details on the DSL available within this file, see
+    #resources :resource_As 元記事には存在したがこれを記入するとエラーが発生するのでコメントアウト
+  end
   devise_for :admins, skip: :all
   #devise_scope :admin do
     # get 'admins/sign_in' => 'admins/sessions#new', as: :new_admin_session
@@ -10,7 +13,7 @@ Rails.application.routes.draw do
 
   devise_for :admins, controllers: {
     #sessions:      'admins/sessions',
-    #passwords:     'admins/passwords',　（無くても良いが念のためコメントアウト）
+    #passwords:     'admins/passwords',（無くても良いが念のためコメントアウト）
     registrations: 'admins/registrations'
   }
 
