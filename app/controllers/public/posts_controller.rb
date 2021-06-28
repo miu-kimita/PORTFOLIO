@@ -1,5 +1,6 @@
 class Public::PostsController < ApplicationController
   before_action :ensure_post_user, only: [:edit, :update, :destroy]
+  before_action :authenticate_post_user!,except: [:index]
 
   def show
     @post = Post.find(params[:id])
@@ -63,6 +64,8 @@ class Public::PostsController < ApplicationController
     @post = @posts.find_by(id: params[:id])
     redirect_to posts_path unless @post
   end
+
+
 
   def post_params
     params.require(:post).permit(:title, :post_detail,:genre_id,:image,:image_id)
