@@ -21,7 +21,7 @@
         <% if post.post_user.is_deleted == false %>
         <tr>
           <td><%= link_to post_user_path(post.post_user.id) do %>
-              <%= attachment_image_tag post.post_user, :image, :fill, 100, 100, format: 'jpeg', fallback: asset_path("no_image.jpg") %></td>
+              <%= attachment_image_tag post.post_user, :image, :fill, 60, 60, format: 'jpeg', fallback: asset_path("no_image.jpg") %></td>
               <% end %>
           </td>
           <td><%= link_to post_path(post.id) do %>
@@ -43,7 +43,7 @@
        <% if post.post_user.is_deleted == false %>
        <tr>
         <td><%= link_to post_user_path(post.post_user.id) do %>
-           <%= attachment_image_tag post.post_user, :image, format: 'jpeg', fallback: asset_path("no_image.jpg") %></td>
+           <%= attachment_image_tag post.post_user, :image, :fill, 100, 100, format: 'jpeg', fallback: asset_path("no_image.jpg") %></td>
            <% end %>
         </td>
         <td><%= link_to post_path(post.id) do %>
