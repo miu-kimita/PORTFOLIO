@@ -1,13 +1,13 @@
 <div class="container">
   <div class="row">
    <div class="col-sm-12 col-md-offset-5 col-md-7 col-lg-5 px-5 px-sm-0 mx-auto">
-    <h1><%= t('post_user.edit.lifehack_edit') %></h1>
+    <h1><%= t('post_user.edit.user_edit') %></h1>
 
     <%= form_with model:@post_user, local:true do |f| %>
 
     <div class="form-group">
-     <p><%= Post.human_attribute_name(:title) %></p>
-     <%= f.text_field :title, class: "form-control" %>
+     <p><%= PostUser.human_attribute_name(:nickname) %></p>
+     <%= f.text_field :nickname, class: "form-control" %>
     </div>
 
     <div class="form-group">
@@ -16,8 +16,8 @@
     </div>
 
     <div class="form-group">
-     <p>LifeHack</p>
-     <%= f.text_field :post_detail, class: "form-control" %>
+     <p><%= t('post_user.edit.introduction') %></p>
+     <%= f.text_field :introduction, class: "form-control" %>
     </div>
 
     <p>

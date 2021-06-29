@@ -1,15 +1,17 @@
 en:
   post_users:                 ## 対象のViewのフォルダ名
     show:                     ##対象のViewのページ名
-      id: "ID"
-      bookmark: "Bookmark"
-      unbookmark: "UnBookmark"
-      post: "Post"
+      post_users: "投稿者名"
+      title: "タイトル"
+      detail: "詳細"
+      edit: "編集"
       created_at: "Created"
       updated_at: "Updated"
     edit:
-      detail: "Detail"
-      edit: "Edit"
+      user_edit: "UserDetailEdit"
+      nickname: "NickName"
+      image: "Image"
+      introduction: "Introduction"
     _search:
       genre_search: "GenreSearch"
       title_search: "TitleSearch"
