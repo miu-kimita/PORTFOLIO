@@ -34,7 +34,8 @@
           <%= f.submit "sign up", class: "btn btn-primary btn-block" %>
         </div>
       <%#= render "post_users/shared/links" %>
-      <p><%= link_to 'Google', post_user_google_oauth2_omniauth_authorize_path, method: :post %></p>
+      <p><%#= link_to 'Google', post_user_google_oauth2_omniauth_authorize_path, method: :post %></p>
+      <!--テストデプロイ環境ではリダイレクトURIが使用できず、有料でドメインを取得しなければ使用できないために一時保留としてコメントアウト>
 
       <!--<div>-->
       <!--  <%# if @sns_id.present? %>-->

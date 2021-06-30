@@ -14,15 +14,15 @@ class Public::SearchController < ApplicationController
   end
 
   def forward(value)                              #forward以降は商品名検索の定義しかしてません。
-    Post.where("name LIKE ?", "#{value}%")
+    Post.where("title LIKE ?", "#{value}%")
   end
 
   def backward(value)
-    Post.where("name LIKE ?", "%#{value}")
+    Post.where("title LIKE ?", "%#{value}")
   end
 
   def partical(value)
-    Post.where("name LIKE ?", "%#{value}%")
+    Post.where("title LIKE ?", "%#{value}%")
   end
 
 
