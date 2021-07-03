@@ -22,6 +22,8 @@ class Public::PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.post_user_id = current_post_user.id
+    #post.score = Language.get_data(post_params[:post_detail])
+    #(現状コメントか投稿かどちらに着けるべきか悩ましいために保留)
     if @post.save
       redirect_to post_path(@post)
       flash[:notice]= "Welcome! You have created LifeHack successfully."

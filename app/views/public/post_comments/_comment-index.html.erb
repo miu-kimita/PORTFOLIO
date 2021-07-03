@@ -6,6 +6,9 @@
               <% end %>
             </td>
             <td><%= post_comment.comment %></td>
+            <% if admin_signed_in? %>
+              <td class="sentiment-score">感情分析スコア[<%= post_comment.score %>]</td>
+            <% end %>
             <% if post_comment.post_user == current_post_user %>
               <div class="comment-delete">
                 <td>

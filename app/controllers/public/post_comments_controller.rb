@@ -1,3 +1,4 @@
+require 'language'
 class Public::PostCommentsController < ApplicationController
   before_action :post_params
 
@@ -5,6 +6,8 @@ class Public::PostCommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     comment = current_post_user.post_comments.new(post_comment_params)
     comment.post_id = @post.id
+    comment.score = ::Language.get_data(post_comment_params[:comment])
+    #(現状コメントか投稿かどちらに着けるべきか悩ましいために保留)
     comment.save
   end
 
