@@ -4,7 +4,9 @@
     <div class='row'>
       <div class='mx-auto'>
         <p class="footer-text">CopyRight The/LifeHacker</p>
-        <div class="footer-link"><%= link_to "お問い合わせはこちらまで", new_contact_path, class: 'text-dark' %></div>
+        <% if post_user_signed_in? %>
+          <div class="footer-link"><%= link_to "お問い合わせはこちらまで", new_contact_path, class: 'text-dark' %></div>
+        <% end %>
       </div>
     </div>
   </div>

@@ -26,6 +26,7 @@
               <%= link_to "#{t('dictionary.button.edit')}", edit_post_path(@post.id), class:"btn btn-success" %>
               <%= link_to t('dictionary.button.destroy'), post_path(@post.id), method: :delete, "data-confirm" => t('dictionary.message.destroy.confirm'),class:"btn btn-success destroy(@post.id)" %>
               <% end %>
+              <!--この部分の多言語化については、Edit側が何故か当初これで通ったが、Destroy側は通らなかったため、統一せずにこの形に。-->
               </p>
             <p id="post_<%= (@post.id) %>"><%= render partial: 'public/favorites/favorite-btn', locals: { post:@post } %></p>
             <p>コメント数：<%= @post.post_comments.count %></p>

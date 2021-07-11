@@ -7,7 +7,7 @@ class Public::PostCommentsController < ApplicationController
     comment = current_post_user.post_comments.new(post_comment_params)
     comment.post_id = @post.id
     comment.score = ::Language.get_data(post_comment_params[:comment])
-    #(現状コメントか投稿かどちらに着けるべきか悩ましいために保留)
+    #(現状コメントか投稿かどちらに着けるべきか悩ましいために保留していたが、投稿内容でネガ表現を行うことも多いため)
     comment.save
   end
 
