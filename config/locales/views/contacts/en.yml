@@ -3,5 +3,7 @@ en:
     new:                     ##対象のViewのページ名
       name: "Name"
       message: "Message"
+      email: "Email"
+      subject: "Subject"
       contact: "Contact Us Form"
       contact_check: "Contact Check"

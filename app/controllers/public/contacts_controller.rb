@@ -1,5 +1,5 @@
 class Public::ContactsController < ApplicationController
-  before_action :ensure_post_user, only: [:new, :confirm, :back]
+  before_action :authenticate_post_user!
 
   def new
     @contact = Contact.new
