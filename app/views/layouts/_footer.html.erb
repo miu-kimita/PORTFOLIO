@@ -6,15 +6,8 @@
         <p class="footer-text">CopyRight The/LifeHacker</p>
         <% if post_user_signed_in? %>
           <div class="footer-link"><%= link_to "お問い合わせはこちらまで", new_contact_path, class: 'text-dark' %></div>
+          <!--何かしらフッターに情報を追加してレイアウトを修正する-->
         <% end %>
-        <div class="collapse navbar-collapse" id="navbarsExample02">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-post"><%= link_to ' about', about_path, class: 'text-white' %></li>
-            <li class="nav-post"><%= link_to "#{t('layout._header.lifehack')}", posts_path , class: 'text-white' %></li>
-            <li class="nav-post"><%= link_to "#{t('layout._header.signup')}", new_post_user_registration_path, class: 'text-white' %></li>
-            <li class="nav-post"><%= link_to "#{t('layout._header.login')}", new_post_user_session_path, class: 'text-white' %></li>
-          </ul>
-        </div>
       </div>
     </div>
   </div>
