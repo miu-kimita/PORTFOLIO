@@ -7,31 +7,31 @@
         <% if post_user_signed_in? %>
           <div class="footer-link"><%= link_to "お問い合わせはこちらまで", new_contact_path, class: 'text-dark' %></div>
           <!--何かしらフッターに情報を追加してレイアウトを修正する-->
-          <div class="collapse navbar-collapse text-white">
-            <ul class="navbar-nav ml-auto text-white" >
-              <li class="nav-post">
-                <%= link_to "#{t('layout._header.mypage')}", post_users_my_page_path, class: 'text-white' %>
-              </li>
-              <li class="nav-post">
-                <%= link_to "#{t('layout._header.lifehack')}", posts_path, class: 'text-white' %>
-              </li>
-              <li class="nav-post">
-                <%= link_to "#{t('layout._header.logout')}", destroy_post_user_session_path, method: :delete, class: 'text-white' %>
-              </li>
-              <li class="nav-post">
-                <%= link_to "#{t('layout._header.new_post')}", new_post_path, class: 'text-white' %>
-              </li>
-            </ul>
-          </div>
-          <% else %>
-            <div class="collapse navbar-collapse" id="navbarsExample02">
-              <ul class="navbar-nav ml-auto">
-                <li class="nav-post"><%= link_to ' about', about_path, class: 'text-white' %></li>
-                <li class="nav-post"><%= link_to "#{t('layout._header.lifehack')}", posts_path , class: 'text-white' %></li>
-                <li class="nav-post"><%= link_to "#{t('layout._header.signup')}", new_post_user_registration_path, class: 'text-white' %></li>
-                <li class="nav-post"><%= link_to "#{t('layout._header.login')}", new_post_user_session_path, class: 'text-white' %></li>
-              </ul>
-            </div>
+          <!--<div class="collapse navbar-collapse text-white">-->
+          <!--  <ul class="navbar-nav ml-auto text-white" >-->
+          <!--    <li class="nav-post">-->
+          <!--      <#%= link_to "#{t('layout._header.mypage')}", post_users_my_page_path, class: 'text-white' %>-->
+          <!--    </li>-->
+          <!--    <li class="nav-post">-->
+          <!--      <#%= link_to "#{t('layout._header.lifehack')}", posts_path, class: 'text-white' %>-->
+          <!--    </li>-->
+          <!--    <li class="nav-post">-->
+          <!--      <#%= link_to "#{t('layout._header.logout')}", destroy_post_user_session_path, method: :delete, class: 'text-white' %>-->
+          <!--    </li>-->
+          <!--    <li class="nav-post">-->
+          <!--      <#%= link_to "#{t('layout._header.new_post')}", new_post_path, class: 'text-white' %>-->
+          <!--    </li>-->
+          <!--  </ul>-->
+          <!--</div>-->
+          <!--<#% else %>-->
+          <!--  <div class="collapse navbar-collapse" id="navbarsExample02">-->
+          <!--    <ul class="navbar-nav ml-auto">-->
+          <!--      <li class="nav-post"><#%= link_to ' about', about_path, class: 'text-white' %></li>-->
+          <!--      <li class="nav-post"><#%= link_to "#{t('layout._header.lifehack')}", posts_path , class: 'text-white' %></li>-->
+          <!--      <li class="nav-post"><#%= link_to "#{t('layout._header.signup')}", new_post_user_registration_path, class: 'text-white' %></li>-->
+          <!--      <li class="nav-post"><#%= link_to "#{t('layout._header.login')}", new_post_user_session_path, class: 'text-white' %></li>-->
+          <!--    </ul>-->
+          <!--  </div>-->
           <% end %>
       </div>
     </div>

@@ -1,0 +1,6 @@
+ja:
+  search:                 ## 対象のViewのフォルダ名
+    search:                     ##対象のViewのページ名
+      title: "タイトル"
+      genre: "ジャンル"
+      not: "該当する投稿はありません。"

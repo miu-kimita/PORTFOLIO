@@ -1,0 +1,6 @@
+en:
+  search:                 ## 対象のViewのフォルダ名
+    search:                     ##対象のViewのページ名
+      title: "Title"
+      genre: "Genre"
+      not: "There are no applicable posts."
