@@ -1,24 +1,45 @@
-# README
+# PORTFOLIO
+# The LifeHackers
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+登録してもらった人々から様々なライフハックを投稿してもらい集めるサイト。
+・基本的にはログイン無しで「投稿されたライフハックのタイトル閲覧」「投稿されたデータの検索」は可能。
+　登録し、ログインしなければ「ライフハックの投稿・評価・レビュー」「お問い合わせが不可能に。
+・デマや違法行為の投稿を防ぐために基本的に登録が必要な形式に。　また、管理者ログインができるようにし、管理者側から違法行為があるライフハックの削除、そのライフハック投稿者のデータの削除などが行えるように。
+・ライフハックという、誰しもが興味を持つテーマを集合知によって共有することで人々の文化的な生活を成長させるだけでなく、
+　更にそれに興味を持って多くの人に見てもらうことが出来れば、広告を貼っての広告収入も最低限期待できるほか、
+　集めたライフハックを本として出版、紹介したライフハックを行うためのコラボ商品等の販売にも手を伸ばすことが出来る可能性も。
 
-Things you may want to cover:
 
-* Ruby version
+### サイトテーマ
+日常の些細な困ったことなどに対して簡単に検索したら出てきて、それを参考にライフハック出来るようになる、お手軽なサイト。
 
-* System dependencies
+### テーマを選んだ理由
+日常のちょっとした雑学などがよくテレビで放送されたりしているが、実際にそれを見たとしても実際に必要とする場面では忘れていることの方が多く、
+結局自分で調べても適当なまとめサイトばかりですぐに見つけられずに結局そのライフハックを使わない、という事が多く、活用してみたいと思ったため。
 
-* Configuration
+### ターゲットユーザ
+「日常生活や家事をもっと効率化したい人」、「自分の知っているライフハックを共有したい人」、「ふと小さなことで困った人」
 
-* Database creation
+### 主な利用シーン
+日常の家事の中で何か困ったことがあった時
 
-* Database initialization
+## 設計書
+https://drive.google.com/file/d/1soPYeljVbvjQwzQcfGFh3D6zJzSGerqQ/view?usp=sharing
 
-* How to run the test suite
+## チャレンジ要素一覧
+https://docs.google.com/spreadsheets/d/1OduAAHTo2GHQWMk6QfEkF97Qgu4rilKZjEDTEe3bVpw/edit?usp=sharing
 
-* Services (job queues, cache servers, search engines, etc.)
+## PFに組み込む想定のAI機能の概要
+投稿されたデータへのレビュー、コメント機能を実装し、それに対して自然言語処理を用いたネガティブ、ポジティブについての判断を行い、
+管理者側でそのスコアをチェックすることが出来るようにし、レビューへのスコアリングを行う機能。
 
-* Deployment instructions
+## 開発環境
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- IDE：Cloud9
 
-* ...
+## 使用素材
+- ライフハックに関して何らかのフリー素材の画像、トップ画面にライフハックをイメージした家事、家庭をイメージできるフリー素材の画像を使用予定。
