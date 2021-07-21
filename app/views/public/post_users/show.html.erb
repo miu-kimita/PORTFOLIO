@@ -1,11 +1,12 @@
 <div class="container px-5 px-sm-0">
   <div class="row">
-  <%#= render 'post_users/list', post_user: @post_user,post: @new_post %>
+
     <div class="col-md-8 offset-md-1">
       <p><%= attachment_image_tag(@post_user, :image, :fill, 100, 100, fallback: "no_image.jpg") %><br>
         【<%= PostUser.human_attribute_name(:nickname) %>】<%= @post_user.nickname %></p>
       <p>【<%= PostUser.human_attribute_name(:introduction) %>】<%= @post_user.introduction %></p>
       <p><%= link_to "#{t('dictionary.button.edit')}", edit_post_user_path(@post_user), class: "btn btn-sm btn-success edit_post_user_#{@post_user.id}" %></p>
+
       <h2>Post LifeHacks</h2>
       <table class="table table-hover table-inverse">
         <tbody>
@@ -26,6 +27,7 @@
           <%= paginate @posts %>
         </tbody>
       </table>
+
       <h2>User Bookmark</h2>
       <table class="table table-hover table-inverse">
         <thead>
@@ -47,6 +49,7 @@
           <% end %>
         </tbody>
       </table>
+
     </div>
   </div>
 </div>

@@ -3,6 +3,7 @@
     <div class='col-md-2'>
       <%= render 'search', genre: @genres %>
     </div>
+
     <div class="col-md-9 offset-md-1">
       <h2>Post detail</h2>
       <table class="table table-hover table-inverse">
@@ -13,6 +14,7 @@
               <%= @post.post_user.nickname %>
               <% end %>
             </p>
+
             <p>【<%= Post.human_attribute_name(:title) %>】<%= @post.title %></p>
             <p>【<%= Post.human_attribute_name(:post_detail) %>】<%= @post.post_detail %></p>
             <p>
@@ -22,6 +24,7 @@
                 <p><%= link_to t('posts.show.bookmark'), post_bookmarks_path(@post), method: :post %></p>
               <% end %>
             </p>
+
             <p><% if @user.id == current_post_user.id %>
               <%= link_to "#{t('dictionary.button.edit')}", edit_post_path(@post.id), class:"btn btn-success" %>
               <%= link_to t('dictionary.button.destroy'), post_path(@post.id), method: :delete, "data-confirm" => t('dictionary.message.destroy.confirm'),class:"btn btn-success destroy(@post.id)" %>
@@ -31,17 +34,21 @@
             <p id="post_<%= (@post.id) %>"><%= render partial: 'public/favorites/favorite-btn', locals: { post:@post } %></p>
             <p>コメント数：<%= @post.post_comments.count %></p>
             </tr>
+
         </tbody>
       </table>
+
       <table>
         <tbody class="post_<%= (@post.id) %>"><%= render partial: 'public/post_comments/comment-index', locals: { post:@post } %></tbody>
       </table>
+
       <div class="new-comment">
         <%= form_with(model:[@post, @post_comment]) do |f| %>
           <%= f.text_area :comment, rows:'5' %>
           <%= f.submit t('posts.show.post') %>
         <% end %>
       </div>
+
     </div>
   </div>
 </div>

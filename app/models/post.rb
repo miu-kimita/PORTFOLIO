@@ -31,8 +31,13 @@ class Post < ApplicationRecord
     #         @post = Post.all
     #     end
     #    上記の物は以前の完全、前方、後方、完全、部分一致の検索に使用した物。wordかsearchか。
-    def self.search(search)
-        return Post.all unless search
-        Post.where('title LIKE(?)', "%#{search}%")
+
+    def self.search(title)
+        return all unless title
+        where('title LIKE(?)', "%#{title}%")
     end
+    # def self.search(search)
+    #     return Post.all unless search
+    #     Post.where('title LIKE(?)', "%#{search}%") 修正前のコード。比較対象として残しておく
+    # end
 end
