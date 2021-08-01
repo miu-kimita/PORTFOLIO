@@ -16,6 +16,7 @@
           <th>LifeHack <%= Post.human_attribute_name(:genre_id) %></th>
         </tr>
       </thead>
+
       <tbody>
         <% @posts.each do |post| %>
         <% if post.post_user.is_deleted == false %>
