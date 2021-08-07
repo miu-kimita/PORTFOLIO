@@ -27,7 +27,7 @@ class Public::SearchController < ApplicationController
 
 
   def search_for(how, value)
-    case how                     #引数のhowと一致する処理に進むように定義しています。
+    case how                     #引数のhowと一致する処理に進むように定義。
     when 'match'                 #ジャンル検索の場合はmatchで固定してるので、必ず'match'の処理に進みます。
       match(value)
     when 'forward'
