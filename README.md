@@ -41,4 +41,4 @@ https://docs.google.com/spreadsheets/d/1OduAAHTo2GHQWMk6QfEkF97Qgu4rilKZjEDTEe3b
 - IDE：Cloud9
 
 ## 使用素材
-- ライフハックに関して何らかのフリー素材の画像、トップ画面にライフハックをイメージした家事、家庭をイメージできるフリー素材の画像を使用予定。
+- 投稿されたライフハックの画像にて、フリー素材の画像を複数使用。
