@@ -1,5 +1,5 @@
 class Public::PostsController < ApplicationController
-  before_action :ensure_post_user, only: [:edit, :update, :destroy]
+  before_action :ensure_post_user, only: [:edit, :update, :destroy] ##投稿者でないと編集、更新、削除ができないように
   before_action :authenticate_post_user!,except: [:index]
 
   def show
